@@ -9,9 +9,9 @@ O projeto **GUI-CONTROLER-DOCKER** é uma aplicação com interface gráfica par
 
 ## Layout
 ## Em execução
-![Em execução](em-execucao.png)
+![Em execução](images/em-execucao.png)
 ## Parado
-![Parado](parado.png)
+![Parado](images/parado.png)
 
 ## Funcionalidades
 
