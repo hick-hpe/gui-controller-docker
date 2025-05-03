@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    ports:
+      - "3000:80"
+
+  apache:
+    build: .
+    container_name: apache
+    ports:
+      - "8080:80"
+    volumes:
+      - ./public-html:/usr/local/apache2/htdocs/
