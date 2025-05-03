@@ -1,11 +1,17 @@
 
-# GUI-CONTROLE-DOCKER
+# GUI-CONTROLER-DOCKER
 
 ## Sobre o projeto
 
-O projeto **GUI-CONTROLE-DOCKER** é uma aplicação com interface gráfica para controle de containers Docker. A aplicação permite iniciar, parar e reiniciar containers Docker por meio de uma API desenvolvida com Flask, e um frontend amigável para facilitar a administração.
+O projeto **GUI-CONTROLER-DOCKER** é uma aplicação com interface gráfica para controle de containers Docker. A aplicação permite iniciar, parar e reiniciar containers Docker por meio de uma API desenvolvida com Flask, e um frontend amigável para facilitar a administração.
 
 *OBS: como primeira versão, é manipualdo apenas um container, sem possibilidade de criar, apenas utilizar o container de teste criado pelo docker-compose.yml.*
+
+## Layout
+## Em execução
+![Em execução](em-execucao.png)
+## Parado
+![Parado](parado.png)
 
 ## Funcionalidades
 
