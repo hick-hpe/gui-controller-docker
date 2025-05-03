@@ -19,10 +19,8 @@ function sendDockerCommand(action, name) {
         body: JSON.stringify({ name })
     })
         .then(res => res.json())
-        .then(data => {
-            // alert(data.status || data.error);
+        .then(_ => {
 
-            // Atualiza o iframe (forçando reload)
             const iframe = document.querySelector('iframe');
             iframe.src = "http://localhost:8080/?t=" + new Date().getTime();
             atualizarStatusContainer(name);
@@ -30,7 +28,6 @@ function sendDockerCommand(action, name) {
         })
         .catch(err => {
             console.error(err);
-            // alert('Ocorreu um erro. Veja o console para detalhes.');
         });
 }
 
@@ -42,31 +39,21 @@ function atualizarStatusContainer(name) {
             const badge = document.getElementById('status-badge');
             const status = data.status;
 
-            const STATUS_ACTIONS = {
-                'running': () => {
-                    badge.textContent = 'Ativo';
-                    badge.className = 'badge rounded-pill text-bg-success';
-                },
-                'exited': () => {
-                    badge.textContent = 'Parado';
-                    badge.className = 'badge rounded-pill text-bg-danger';
-                },
-                'stopped': () => {
-                    badge.textContent = 'Parado';
-                    badge.className = 'badge rounded-pill text-bg-danger';
-                },
+            console.log('Status:', status);
+
+            if (status === 'running') {
+                badge.textContent = 'Ativo';
+                badge.className = 'badge rounded-pill text-bg-success';
+            } else {
+                badge.textContent = 'Parado';
+                badge.className = 'badge rounded-pill text-bg-danger';
             }
-            STATUS_ACTIONS[status] ? STATUS_ACTIONS[status]() : (() => {
-                badge.textContent = 'Indefinido';
-                badge.className = 'badge rounded-pill text-bg-secondary';
-            })();
         });
 }
 
-// fetch(`http://localhost:5000/`)
-//     .then(data => {
-//         console.log(data);
-//     });
-    
-// console.log(('----------------'));
-atualizarStatusContainer('ctn-teste');
+document.addEventListener('DOMContentLoaded', () => {
+    const iframe = document.querySelector('iframe');
+    iframe.src = "http://localhost:8080/?t=" + new Date().getTime();
+    console.log('atualizou')
+    atualizarStatusContainer('apache');
+});
