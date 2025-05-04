@@ -70,8 +70,8 @@ gui-controle-docker/
     
     
    ```
-   git clone https://github.com/seu-usuario/gui-controle-docker.git
-   cd gui-controle-docker
+   git clone https://github.com/hick-hpe/gui-controller-docker.git
+   cd gui-controller-docker
  ```
     
 2.  Inicie os containers:
